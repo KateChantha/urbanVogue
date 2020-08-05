@@ -8,11 +8,24 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
-  background-position: center;
-  background-size: cover;
-
-  &.large {
+  // ** prevent form tranform overflow over the border
+  overflow: hidden;
+  
+  & .large {
     height: 380px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  
+    & .background-image {
+      transform: scale(1.1);
+      transition: transform 4s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  
+    & .content {
+      opacity: 0.9;
+    }
   }
 
   &:first-child {
@@ -23,6 +36,13 @@
     margin-left: 7.5px;
   }
 
+  .background-image {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
   .content {
     height: 90px;
     padding: 0 25px;
@@ -30,8 +50,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    // *** IMPORTANT: position absolute *****
+    position: absolute;
     border: 1px solid black;
-
+    background-color: white;
+    opacity: 0.7;
+    
     .title {
       font-weight: bold;
       margin-bottom: 6px;
