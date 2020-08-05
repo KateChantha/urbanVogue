@@ -48,10 +48,16 @@ class Directory extends React.Component {
     }
   }
 
-  // 
+  // === REFACTORING #1 ======================
   // {
   //   this.state.sections.map(section => (
   //     <MenuItem key={section.id} title={section.title} image={section.imageUrl} />
+  //   ))
+  // }
+  // === REFACTORING #2 ======================
+  // {
+  //   this.state.sections.map(({ id, title, imageUrl, size, linkUrl }) => (
+  //     <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} linkUrl={linkUrl} />
   //   ))
   // }
   /** 
@@ -61,8 +67,8 @@ class Directory extends React.Component {
     return (
       <div className='directory-menu'>
         {
-          this.state.sections.map(({ id, title, imageUrl, size }) => (
-            <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+          this.state.sections.map(({ id, ...otherSectionProps }) => (
+            <MenuItem key={id} {...otherSectionProps} />
           ))
         }
       </div>
