@@ -5,8 +5,8 @@ import './menu-item.scss';
  * dynamicly generate title and image that passing thru props
  * destructuring {tilte} instead of writing props.tilte
  */
-const MenuItem = ({ title }) => (
-  <div className='menu-item'>
+const MenuItem = ({ title, imageUrl, size }) => (
+  <div className={`${size} menu-item`} style={{ backgroundImage: `url(${imageUrl})` }} >
     <div className='content'>
       <h1 className='title'>{title}</h1>
       <span className='subtitle'>SHOP NOW</span>
@@ -14,4 +14,4 @@ const MenuItem = ({ title }) => (
   </div>
 )
 
-export default MenuItem;
+export default MenuItem;   
