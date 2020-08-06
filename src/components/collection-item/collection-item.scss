@@ -1,0 +1,36 @@
+.collection-item {
+  width: 22%;
+  display: flex;
+  // allow image and footer to sit in vertical
+  flex-direction: column; 
+  height: 350px;
+  align-items: center;
+
+  .image {
+    width: 100%;
+    // keep 5% room for footer 
+    height: 95%; 
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+  }
+
+  .collection-footer {
+    width: 100%;
+    height: 5%;
+    // flex display for name and price
+    // in ratio 90%/10% space between
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+
+    .name {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      width: 10%;
+    }
+  }
+}
