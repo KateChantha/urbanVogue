@@ -3,7 +3,9 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 // LEAVE OUT 
-const config = {};
+const config = {
+
+};
 
 //initailize firebase
 firebase.initializeApp(config);
