@@ -1,5 +1,7 @@
 import React from 'react';
 
+import FormInput from '../form-input/form-input.component';
+
 import './signin.scss';
 
 class SignIn extends React.Component {
@@ -22,7 +24,7 @@ class SignIn extends React.Component {
   handleChange = event => {
     const { value, name } = event.target;
 
-    // {[name]: } destructuring object's property called name
+    // {[name]: }
     // dynamicly setting property refer to  
     // <input name='email' />
     // <input name='password' />      
@@ -36,22 +38,22 @@ class SignIn extends React.Component {
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
-          <input
+          <FormInput
             name='email'
             type='email'
+            label='email'
             value={this.state.email}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             required
           />
-          <label>Email</label>
-          <input
+          <FormInput
             name='password'
             type='password'
+            label='password'
             value={this.state.password}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             required
           />
-          <label>Password</label>
           <input type='submit' value='Submit Form' />
         </form>
       </div>
