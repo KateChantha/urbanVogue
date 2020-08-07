@@ -1,4 +1,11 @@
 .sign-in {
   // 30% view width
   width: 30vw;
+  display: flex;
+  // all elem in SignIn sit verticly
+  flex-direction: column;
+
+  .title {
+    margin: 10px 0;
+  }
 }
