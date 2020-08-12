@@ -5,10 +5,10 @@ import HomePage from './pages/homepage/homepage.component'
 import ShopPage from './pages/shoppage/shop.component';
 import Header from './components/header/header.componenet';
 import SignInSignUpPage from './pages/signin-signup-page/signin-signup.component'
-// import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import './App.css';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+
 
 /**
  * store state of user in App
